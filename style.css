@@ -101,3 +101,9 @@ footer {
     align-items: center;
   }
 }
+
+ .note {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #555;
+  }
