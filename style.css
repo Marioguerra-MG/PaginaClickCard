@@ -66,7 +66,7 @@ main {
   background: #fff;
   padding: 30px;
   border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   flex: 1 1 250px;
   text-align: center;
   transition: transform 0.3s;
@@ -94,16 +94,71 @@ footer {
   color: #888;
 }
 
+/* Banner fixo no topo */
+.hint-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff3f8;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-bottom: 2px solid #d6336c;
+  z-index: 10000;
+}
+
+/* Texto do aviso */
+.hint-banner .note {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #333;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Seta animada */
+.arrow-hint {
+  font-size: 1.5rem;
+  color: #d6336c;
+  animation: bounce 1s infinite;
+}
+
+/* Animação "pulando" */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Ajuste no body para não ficar escondido atrás do banner */
+body {
+  padding-top: 60px; /* empurra o conteúdo para baixo */
+}
+
+
+/* Animação "pulando" para chamar atenção */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+
 /* Responsivo */
-@media(max-width:768px){
+@media(max-width:768px) {
   .features {
     flex-direction: column;
     align-items: center;
   }
 }
 
- .note {
-    margin-top: 20px;
-    font-size: 0.9em;
-    color: #555;
-  }
+.note {
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #555;
+}

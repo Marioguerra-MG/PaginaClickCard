@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Click Card - Crie Seu Cartão</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <header>
     <div class="header-content">
       <h1>Click Card</h1>
       <p>Crie, personalize e compartilhe cartões digitais incríveis em segundos!</p>
-      <p class="note">Para funcionar, clique nos 3 pontos e abra no navegador (Chrome, Safari) para conseguir acessar a aplicação</p>
       <a href="https://click-card.vercel.app/" target="_blank" class="btn-primary" id="testBtn">Para testar</a>
     </div>
   </header>
+
+  <!-- Aviso dos 3 pontos -->
+  <div class="hint-banner">
+    <p class="note">Clique nos 3 pontos e abra no navegador (Chrome, Safari) para acessar a aplicação corretamente</p>
+    <span class="arrow-hint">⬆</span>
+  </div>
 
   <main>
     <section class="features">
@@ -38,9 +45,10 @@
   </footer>
 
   <!-- Toast -->
-  <div id="toast" class="toast">Abra no navegador Chrome ou Safari para acessar a aplicação.</div>
+  <div id="toast" class="toast"></div>
 
   <!-- Script externo -->
   <script src="script.js"></script>
 </body>
+
 </html>
