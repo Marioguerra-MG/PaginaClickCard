@@ -13,6 +13,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-top: 60px; /* empurra conteúdo para baixo do banner */
 }
 
 header {
@@ -94,7 +95,7 @@ footer {
   color: #888;
 }
 
-/* Banner fixo no topo */
+/* Banner fixo (aviso dos 3 pontos) */
 .hint-banner {
   position: fixed;
   top: 0;
@@ -102,7 +103,7 @@ footer {
   width: 100%;
   background: #fff3f8;
   padding: 10px;
-  display: flex;
+  display: none; /* escondido por padrão */
   align-items: center;
   justify-content: center;
   gap: 10px;
@@ -129,34 +130,24 @@ footer {
 /* Animação "pulando" */
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
+  50% { transform: translateY(-6px); }
 }
 
-/* Ajuste no body para não ficar escondido atrás do banner */
-body {
-  padding-top: 60px; /* empurra o conteúdo para baixo */
-}
-
-
-/* Animação "pulando" para chamar atenção */
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
+/* Responsivo - mostra o aviso apenas em celular e tablet */
+@media (max-width: 1024px) {
+  .hint-banner {
+    display: flex;
   }
 }
 
-
-/* Responsivo */
-@media(max-width:768px) {
+@media (max-width: 768px) {
   .features {
     flex-direction: column;
     align-items: center;
   }
 }
 
+/* Estilo para notas dentro do conteúdo */
 .note {
   margin-top: 20px;
   font-size: 0.9em;
