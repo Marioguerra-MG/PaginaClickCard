@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }`;
   document.head.appendChild(style);
 
-  // Função para detectar navegador
+  // Detecta navegador
   function detectBrowser() {
     const ua = navigator.userAgent.toLowerCase();
     if (ua.includes('instagram')) return 'instagram';
@@ -47,27 +47,22 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateButtonState() {
     const browser = detectBrowser();
 
-    // Se estiver no Instagram ou Facebook, desabilita botão
-    if (browser === 'instagram' || browser === 'facebook') {
-      btn.style.pointerEvents = 'none';
-      btn.style.opacity = '0.6';
-
-      // Exibe toast
+    if (browser === 'chrome' || browser === 'safari') {
+      btn.style.display = 'inline-block'; // mostra botão
+    } else {
+      btn.style.display = 'none'; // esconde botão
+      // Exibe toast apenas uma vez
       toast.innerText = 'Abra no navegador Chrome ou Safari para acessar a aplicação.';
       toast.classList.add('show');
       setTimeout(() => {
         toast.classList.remove('show');
       }, 3000);
-
-    } else {
-      btn.style.pointerEvents = 'auto';
-      btn.style.opacity = '1';
     }
   }
 
-  // Chama a função quando a página carrega
+  // Chama ao carregar
   updateButtonState();
 
-  // Atualiza caso o usuário volte do Instagram/Facebook para outro navegador
+  // Atualiza caso o usuário volte do Instagram/Facebook
   window.addEventListener('focus', updateButtonState);
 });
